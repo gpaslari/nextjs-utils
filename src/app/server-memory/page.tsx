@@ -1,6 +1,7 @@
 import {remember} from "@/lib/server-memory/serverMemory";
 import {milliseconds, seconds} from "@/lib/server-memory/utils";
-import CodeSnippet from "@/ui/CodeSnippet";
+import CodeSnippet from "@/components/CodeSnippet";
+import Link from "next/link"
 
 const getLatestDate = async () => {
     return new Promise<Date>((resolve, reject) => {
@@ -20,7 +21,7 @@ export default async function ServerMemoryPage() {
         .for(seconds(5).and(milliseconds(50)))
 
     return <div className="flex flex-col gap-4">
-        <h1>Server Memory (<a target="_blank" href="https://github.com/gpaslari/nextjs-utils/tree/main/src/lib/server-memory">code on git</a>)</h1>
+        <h1><Link href="/">Home</Link> -&gt; Server Memory (<a target="_blank" href="https://github.com/gpaslari/nextjs-utils/tree/main/src/lib/server-memory">code on git</a>)</h1>
         <div>
             <div className="mb-2">This value is cached: <span
                 className="p-2 bg-amber-400 rounded">{latestDate.toLocaleString()}</span></div>

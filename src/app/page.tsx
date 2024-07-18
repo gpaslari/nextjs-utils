@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ItemDetailsBlock from "@/ui/ItemDetailsBlock";
+import ItemDetailsBlock from "@/components/ItemDetailsBlock";
 
 export default function Home() {
   return (

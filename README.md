@@ -1,8 +1,33 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-It contains different useful utilities I developed for myself while working on different NextJS projects.
+It contains different useful utilities I developed for myself while working on different NextJS projects:
 
-## Getting Started
+## Utilities
+
+### Server Memory
+**Problem:** I need an application level cache with auto refresh. Built-in NextJS caching is request or page level.
+
+**Existing solutions:** In 15 min didn't find anything nice and simple.
+
+**My Solution:** "Server Memory" with expiry and auto-refresh. Does it in app RAM by default, can easily be extended to use file system, NoSQL DB or anything else you like as a memory provider ;)
+
+#### Example
+```typescript
+// remember() gets an async parameterless function as incoming param
+const latestDate: Date = await remember(getLatestDate)
+
+    // here you specify the hash name you can use later to invalidate it
+    .as("LATEST_DATE")
+
+    // for(...) gets an instance of MemoryDuration. There are helpers for most common time periods (e.g. minutes(), hours(), days())
+    // and you can stack them as you need (e.g. days(5).and(hours(4)).and(minutes(5)))
+    .for(seconds(5).and(milliseconds(50)))
+```
+#### Links
+- [Usage example](https://github.com/gpaslari/nextjs-utils/blob/main/src/app/server-memory/page.tsx)
+- [Code itself](https://github.com/gpaslari/nextjs-utils/tree/main/src/lib/server-memory)
+
+## Running the app
 
 First, run the development server:
 
