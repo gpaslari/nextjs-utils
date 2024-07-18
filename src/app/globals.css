@@ -54,3 +54,11 @@ code {
   border-radius: 3px;
   border: solid black 1px;
 }
+
+a {
+  color: cadetblue;
+}
+
+a:hover {
+  color: #6bb4b6;
+}
