@@ -31,3 +31,26 @@ body {
     text-wrap: balance;
   }
 }
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+code {
+  background-color: white;
+  padding: 2px;
+  border-radius: 3px;
+  border: solid black 1px;
+}
