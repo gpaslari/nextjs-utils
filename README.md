@@ -27,6 +27,23 @@ const latestDate: Date = await remember(getLatestDate)
 - [Usage example](https://github.com/gpaslari/nextjs-utils/blob/main/src/app/server-memory/page.tsx)
 - [Code itself](https://github.com/gpaslari/nextjs-utils/tree/main/src/lib/server-memory)
 
+### Storage State
+**Problem:** I need a simple global and persisted state management functionality and don't want to go through complex redux configuration.
+
+**Existing solutions:** Redux is too complicated, others... I don't know any other options TBH...
+
+**My Solution:** "Storage State" - as simple as React useState hook. Gracefully shares the provided state among all components. Uses LocalStorage by default, can easily be extended to use other memory provider ;)
+
+#### Example
+```typescript
+// you don't even need this comment to understand how to use it, do you?
+const {items, addItem, removeItem} = useStorageState<Record>("RECORDS")
+```
+#### Links
+- [Usage example](https://github.com/gpaslari/nextjs-utils/blob/main/src/components/StorageStateComponent.tsx)
+- [Code itself](https://github.com/gpaslari/nextjs-utils/tree/main/src/lib/storage-state)
+
+
 ## Running the app
 
 First, run the development server:
