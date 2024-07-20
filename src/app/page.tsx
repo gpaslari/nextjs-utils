@@ -16,6 +16,17 @@ export default function Home() {
               "Can be extended to use file system or DB of your choise"
             ]}
         />
+          <ItemDetailsBlock
+              link="/storage-state"
+              title="Storage State"
+              subTitle="A simple global state management library"
+              benefits={[
+                  "Easy to use - it's a simple hook",
+                  "Shares global state components and pages",
+                  "Persists data between sessions - local storage is your provider",
+                  "Can be extended to use other storage providers"
+              ]}
+          />
       </div>
   );
 }
